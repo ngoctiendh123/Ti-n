@@ -33,20 +33,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(error);
     }
     const searchInput = document.getElementById("search-input");
-if (searchInput) {
-    searchInput.addEventListener("keyup", async function () {
-        const keyword = this.value.toLowerCase();
-
-        // Lọc lại danh sách món ăn
-        const allFoods = await getAllFoodsFromIndexedDB();
-        const filteredFoods = allFoods.filter(food =>
-            food.name.toLowerCase().includes(keyword)
-        );
-
-        renderFoodList(filteredFoods);
-    });
-}
-
 });
 
 // Lắng nghe sự kiện thay đổi trong localStorage
